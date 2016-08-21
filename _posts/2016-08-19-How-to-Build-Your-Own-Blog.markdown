@@ -1,13 +1,27 @@
 ---
 layout:     post
-title:      "Dinosaurs are extinct today"
-subtitle:   "because they lacked opposable thumbs and the brainpower to build a space program."
-date:       2014-06-10 12:00:00
-author:     "Start Bootstrap"
+title:      "How to Build Your Own Blog"
+subtitle:   "best solution-GitHub Pages + Jekyll."
+date:       2016-08-19 12:00:00
+author:     "Yamin Li"
 header-img: "img/post-bg-01.jpg"
 ---
 
-<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+<p>Here is the official introduction to GitHub Pages. "Websites for you and your projects. Hosted directly from your GitHUb repository. Just edit, push, and your changes are live.</p>
+
+<p>Let's see what GitHub Pages can do with some examples.(Ranked by Stars)</p>
+
+<p>introduce Jekyll</p>
+
+<p>github pages + Jekyll is absolutely a good choice for your first blog website.</p>
+
+<p>1.create your github repo first (fork or create your own)</p>
+
+<p>2.install Jekyll</p>
+
+<p>2.1 For mac user, install your own ruby version first(use rbenv)</p>
+<p>2.2 gem install bundle</p>
+<p>2.3 gem install Jekyll</p>
 
 <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
 
