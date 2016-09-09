@@ -1,15 +1,15 @@
 # Site settings
-title: Yamin LI's Blog
+title: Yummy Yamin
 header-img: img/home-bg.jpg
 email: liyamin0222@gmail.com
-copyright_name: Your/Project/Corporate Name
-description: "Write your site description here. It will be used as your sites meta description as well!"
+copyright_name: Yamin Li
+description: "Stay young & Stay hungry"
 baseurl: ""
 url: "http://yourdomain.com"
-twitter_username: SBootstrap
-github_username:  davidtmiller
-facebook_username:  IronSummitMedia
-email_username:  your-email@yourdomain.com
+twitter_username:
+github_username:  yaminli
+facebook_username:  Michael Li
+email_username:
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
