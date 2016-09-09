@@ -3,7 +3,7 @@ title: Yummy Yamin
 header-img: img/home-bg.jpg
 email: liyamin0222@gmail.com
 copyright_name: Yamin Li
-description: "Stay young & Stay hungry"
+description: "Stay Young & Stay Hungry"
 baseurl: ""
 url: "http://yourdomain.com"
 twitter_username:
@@ -26,5 +26,5 @@ gems: [jekyll-paginate, jekyll-feed]
 
 #sidebar - about me
 sidebar: true
-sidebar-about-description: "Stay young & Stay hungry"
+sidebar-about-description: "Northwestern University      Alibaba Group Intern"
 sidebar-avatar: /img/avatar-yummy.jpg
