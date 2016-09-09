@@ -21,9 +21,23 @@ layout: default
 <div class="container">
 	<div class="row">
     {% if site.sidebar == true %}
-		  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			     {{ content }}
+		  <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            postlist-container
+        ">
+			  {{ content }}
 		  </div>
+
+      <div class="
+          col-lg-3 col-lg-offset-0
+          col-md-3 col-md-offset-0
+          col-sm-12
+          col-xs-12
+          sidebar-container
+      ">
 
       <section class="visible-md visible-lg">
         <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
@@ -36,6 +50,7 @@ layout: default
                 {% endif %}
             </div>
       </section>
+    </div>
     {% endif %}
 	</div>
 </div>
