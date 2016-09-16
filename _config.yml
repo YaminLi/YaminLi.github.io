@@ -26,5 +26,5 @@ gems: [jekyll-paginate, jekyll-feed]
 
 #sidebar - about me
 sidebar: true
-sidebar-about-description: "Northwestern University      Alibaba Group Intern"
+sidebar-about-description: "Northwestern University &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Alibaba Group Intern"
 sidebar-avatar: /img/avatar-yummy.jpg

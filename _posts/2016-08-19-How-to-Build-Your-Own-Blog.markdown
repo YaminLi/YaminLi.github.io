@@ -7,13 +7,39 @@ author:     "Yamin Li"
 header-img: "img/post-bg-01.jpg"
 ---
 
-<p>Here is the official introduction to GitHub Pages. "Websites for you and your projects. Hosted directly from your GitHUb repository. Just edit, push, and your changes are live.</p>
+## #Introduction
+<p></p>
+#### Github Pages
 
-<p>Let's see what GitHub Pages can do with some examples.(Ranked by Stars)</p>
+Here is the official introduction to [GitHub Pages](https://pages.github.com).
 
-<p>introduce Jekyll</p>
+>"Websites for you and your projects. Hosted directly from your GitHUb repository. Just edit, push, and your changes are live."
 
-<p>github pages + Jekyll is absolutely a good choice for your first blog website.</p>
+Let's see what GitHub Pages can do with some examples. (Ranked by Stars)
+
+[Bootstrap](http://getbootstrap.com)
+![img](/img/in-post/bootstrap.jpg)
+
+[Facebook React](https://facebook.github.io/react/)
+![img](/img/in-post/react.jpg)
+
+[Ratchet](http://twbs.github.io/ratchet)
+![img](/img/in-post/ratchet.jpg)
+
+[Electron](http://electron.github.io/electron.atom.io)
+![img](/img/in-post/electron.jpg)
+
+#### Jekyll
+
+Here is the official introduction to [Jekyll](http://jekyllrb.com/docs/home/).
+
+>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like [Markdown](https://daringfireball.net/projects/markdown/)) and our [Liquid](https://github.com/Shopify/liquid/wiki) renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.
+
+So Github Pages + Jekyll is absolutely a good choice to build our first blog website.
+
+---
+
+## #To Start
 
 <p>1.create your github repo first (fork or create your own)</p>
 
