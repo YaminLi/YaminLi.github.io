@@ -9,7 +9,8 @@ header-img: "img/post-bg-01.jpg"
 
 ## #Introduction
 <p></p>
-#### Github Pages
+
+#### Github Pages ####
 
 Here is the official introduction to [GitHub Pages](https://pages.github.com).
 
@@ -17,19 +18,19 @@ Here is the official introduction to [GitHub Pages](https://pages.github.com).
 
 Let's see what GitHub Pages can do with some examples. (Ranked by Stars)
 
-[Bootstrap](http://getbootstrap.com)
-![img](/img/in-post/bootstrap.jpg)
+  * [Bootstrap](http://getbootstrap.com)
+  ![img](/img/in-post/2016-08-19/bootstrap.jpg)
 
-[Facebook React](https://facebook.github.io/react/)
-![img](/img/in-post/react.jpg)
+  <!-- * [Facebook React](https://facebook.github.io/react/)
+  ![img](/img/in-post/2016-08-19/react.jpg) -->
 
-[Ratchet](http://twbs.github.io/ratchet)
-![img](/img/in-post/ratchet.jpg)
+  * [Ratchet](http://twbs.github.io/ratchet)
+  ![img](/img/in-post/2016-08-19/ratchet.jpg)
 
-[Electron](http://electron.github.io/electron.atom.io)
-![img](/img/in-post/electron.jpg)
+  * [Electron](http://electron.github.io/electron.atom.io)
+  ![img](/img/in-post/2016-08-19/electron.jpg)
 
-#### Jekyll
+#### Jekyll ####
 
 Here is the official introduction to [Jekyll](http://jekyllrb.com/docs/home/).
 
@@ -41,43 +42,116 @@ So Github Pages + Jekyll is absolutely a good choice to build our first blog web
 
 ## #To Start
 
-<p>1.create your github repo first (fork or create your own)</p>
+* create your github repo first (fork or create your own)
 
-<p>2.install Jekyll</p>
+```
+git clone https://github.com/username/username.github.io
+```
 
-<p>2.1 For mac user, install your own ruby version first(use rbenv)</p>
-<p>2.2 gem install bundle</p>
-<p>2.3 gem install Jekyll</p>
+* install Jekyll
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+  * For mac user, install your own ruby version first(use rbenv)
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+  ````
+  #homebrew to install rbenv
+  ~ $ brew update
+  ~ $ brew install rbenv
 
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+  #install our own ruby
+  ~ $ rbenv install 2.3.1
 
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+  #check ruby versions
+  ~ $ rbenv versions
 
-<h2 class="section-heading">The Final Frontier</h2>
+  #using a ruby in the shell
+  ~ $ rbenv shell 'rubyversion'
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+  ````
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+  * Install Jekyll and create your blog
 
-<blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+  ````
+  ~ $ gem install bundle
+  ~ $ gem install jekyll
+  ~ $ jekyll new myblog
+  ~ $ cd myblog
+  ~/myblog $ bundle install
+  ~/myblog $ bundle exec jekyll serve
+  # => Now browse to http://localhost:4000
+  ````
+* fork from whatever you like from [Jekyll Theme](http://jekyllthemes.org), and build your own on it.
 
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+  List some themes I really like.
 
-<h2 class="section-heading">Reaching for the Stars</h2>
+  I. [Airspace](https://luminousrubyist.github.io/airspace-jekyll/)
+  ![img](/img/in-post/2016-08-19/airspace.jpg)
+  Auther: Andrew Lee  
+  [HomePage](https://github.com/luminousrubyist/airspace-jekyll)
 
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+  II. [Jekyll-Uno](http://joshgerdes.com/jekyll-uno/)
+  ![img](/img/in-post/2016-08-19/jekyll-uno.jpg)
+  Auther: Josh Gerdes  
+  [HomePage](https://github.com/joshgerdes/jekyll-uno)
 
-<a href="#">
+  III. [Mug](http://nandomoreira.me/mug/)
+  ![img](/img/in-post/2016-08-19/mug.jpg)
+  Auther: nandomoreira.me  
+  [HomePage](https://github.com/nandomoreirame/mug)
+
+  VI. [Long Haul](http://brianmaierjr.com/long-haul/)
+  ![img](/img/in-post/2016-08-19/long-haul.jpg)
+  Auther: Brian Maier Jr.  
+  [HomePage](https://github.com/brianmaierjr/long-haul)
+
+  V. [Centrarium](http://bencentra.com/centrarium/)
+  ![img](/img/in-post/2016-08-19/centrarium.jpg)
+  Auther: Ben Centra  
+  [HomePage](https://github.com/bencentra/centrarium)
+
+## #Jekyll Directory Structure
+
+A basic Jekyll site usually looks something like this:
+
+````
+.
+├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.md
+|   └── on-simplicity-in-technology.md
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+|   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _data
+|   └── members.yml
+├── _site
+├── .jekyll-metadata
+└── index.html
+
+````
+
+* `_config.yml` stores [configuration](https://jekyllrb.com/docs/configuration/) data, including blog title, favicon, description, contact info, visit info (Google Analysis).
+
+* `_includes` are the partials that can be mixed and matched by your layouts an dposts to facilitate reuse. The liquid tag `{``%``include file.ext %}` can be used to include the partial  in `_include/file.ext`.
+
+* `_layouts` are the templates that wrap posts. Layouts are chosen on a post-by-post basis in the [YAML Front Matter](https://jekyllrb.com/docs/frontmatter/). The liquid tag `{``{` `content }}` is used to inject content into the web page.
+
+* `_posts` is your dynamic content lies. The naming must follow the format `YEAR-MONTH-DAY-title.MARKUP`.
+
+* `_site` is where the generated site will be placed(by default) once Jekyll is done transforming it. It's probably a good idea to add this to your `.gitignore` file.
+
+* `index.html` Provided that the file has a [YAML Front Matter section](https://jekyllrb.com/docs/frontmatter/), it will be transformed by Jekyll.
+
+<!-- <h2 class="section-heading">The Final Frontier</h2> -->
+
+<!-- <h2 class="section-heading">Reaching for the Stars</h2> -->
+
+<!-- <a href="#">
     <img src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="Post Sample Image">
 </a>
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span> -->

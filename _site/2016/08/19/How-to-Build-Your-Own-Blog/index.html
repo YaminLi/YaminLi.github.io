@@ -106,6 +106,7 @@
 
 				<h2 id="introduction">#Introduction</h2>
 <p></p>
+
 <h4 id="github-pages">Github Pages</h4>
 
 <p>Here is the official introduction to <a href="https://pages.github.com">GitHub Pages</a>.</p>
@@ -116,17 +117,24 @@
 
 <p>Let’s see what GitHub Pages can do with some examples. (Ranked by Stars)</p>
 
-<p><a href="http://getbootstrap.com">Bootstrap</a>
-<img src="/img/in-post/bootstrap.jpg" alt="img" /></p>
+<ul>
+  <li><a href="http://getbootstrap.com">Bootstrap</a>
+  <img src="/img/in-post/2016-08-19/bootstrap.jpg" alt="img" /></li>
+</ul>
 
-<p><a href="https://facebook.github.io/react/">Facebook React</a>
-<img src="/img/in-post/react.jpg" alt="img" /></p>
+<p><!-- * [Facebook React](https://facebook.github.io/react/)
+  ![img](/img/in-post/2016-08-19/react.jpg) --></p>
 
-<p><a href="http://twbs.github.io/ratchet">Ratchet</a>
-<img src="/img/in-post/ratchet.jpg" alt="img" /></p>
-
-<p><a href="http://electron.github.io/electron.atom.io">Electron</a>
-<img src="/img/in-post/electron.jpg" alt="img" /></p>
+<ul>
+  <li>
+    <p><a href="http://twbs.github.io/ratchet">Ratchet</a>
+  <img src="/img/in-post/2016-08-19/ratchet.jpg" alt="img" /></p>
+  </li>
+  <li>
+    <p><a href="http://electron.github.io/electron.atom.io">Electron</a>
+  <img src="/img/in-post/2016-08-19/electron.jpg" alt="img" /></p>
+  </li>
+</ul>
 
 <h4 id="jekyll">Jekyll</h4>
 
@@ -142,46 +150,140 @@
 
 <h2 id="to-start">#To Start</h2>
 
-<p>1.create your github repo first (fork or create your own)</p>
+<ul>
+  <li>create your github repo first (fork or create your own)</li>
+</ul>
 
-<p>2.install Jekyll</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/username/username.github.io
+</code></pre>
+</div>
 
-<p>2.1 For mac user, install your own ruby version first(use rbenv)</p>
-<p>2.2 gem install bundle</p>
-<p>2.3 gem install Jekyll</p>
+<ul>
+  <li>
+    <p>install Jekyll</p>
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+    <ul>
+      <li>For mac user, install your own ruby version first(use rbenv)</li>
+    </ul>
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>#homebrew to install rbenv
+~ $ brew update
+~ $ brew install rbenv
 
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+#install our own ruby
+~ $ rbenv install 2.3.1
 
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+#check ruby versions
+~ $ rbenv versions
 
-<h2 class="section-heading">The Final Frontier</h2>
+#using a ruby in the shell
+~ $ rbenv shell 'rubyversion'
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+</code></pre>
+    </div>
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+    <ul>
+      <li>Install Jekyll and create your blog</li>
+    </ul>
 
-<blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+    <div class="highlighter-rouge"><pre class="highlight"><code>~ $ gem install bundle
+~ $ gem install jekyll
+~ $ jekyll new myblog
+~ $ cd myblog
+~/myblog $ bundle install
+~/myblog $ bundle exec jekyll serve
+# =&gt; Now browse to http://localhost:4000
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>fork from whatever you like from <a href="http://jekyllthemes.org">Jekyll Theme</a>, and build your own on it.</p>
 
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+    <p>List some themes I really like.</p>
 
-<h2 class="section-heading">Reaching for the Stars</h2>
+    <p>I. <a href="https://luminousrubyist.github.io/airspace-jekyll/">Airspace</a>
+<img src="/img/in-post/2016-08-19/airspace.jpg" alt="img" />
+Auther: Andrew Lee<br />
+<a href="https://github.com/luminousrubyist/airspace-jekyll">HomePage</a></p>
 
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+    <p>II. <a href="http://joshgerdes.com/jekyll-uno/">Jekyll-Uno</a>
+<img src="/img/in-post/2016-08-19/jekyll-uno.jpg" alt="img" />
+Auther: Josh Gerdes<br />
+<a href="https://github.com/joshgerdes/jekyll-uno">HomePage</a></p>
 
-<p><a href="#">
-    <img src="/img/post-sample-image.jpg" alt="Post Sample Image" />
+    <p>III. <a href="http://nandomoreira.me/mug/">Mug</a>
+<img src="/img/in-post/2016-08-19/mug.jpg" alt="img" />
+Auther: nandomoreira.me<br />
+<a href="https://github.com/nandomoreirame/mug">HomePage</a></p>
+
+    <p>VI. <a href="http://brianmaierjr.com/long-haul/">Long Haul</a>
+<img src="/img/in-post/2016-08-19/long-haul.jpg" alt="img" />
+Auther: Brian Maier Jr.<br />
+<a href="https://github.com/brianmaierjr/long-haul">HomePage</a></p>
+
+    <p>V. <a href="http://bencentra.com/centrarium/">Centrarium</a>
+<img src="/img/in-post/2016-08-19/centrarium.jpg" alt="img" />
+Auther: Ben Centra<br />
+<a href="https://github.com/bencentra/centrarium">HomePage</a></p>
+  </li>
+</ul>
+
+<h2 id="jekyll-directory-structure">#Jekyll Directory Structure</h2>
+
+<p>A basic Jekyll site usually looks something like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.
+├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.md
+|   └── on-simplicity-in-technology.md
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+|   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _data
+|   └── members.yml
+├── _site
+├── .jekyll-metadata
+└── index.html
+
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">_config.yml</code> stores <a href="https://jekyllrb.com/docs/configuration/">configuration</a> data, including blog title, favicon, description, contact info, visit info (Google Analysis).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">_includes</code> are the partials that can be mixed and matched by your layouts an dposts to facilitate reuse. The liquid tag <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">include file.ext %}</code> can be used to include the partial  in <code class="highlighter-rouge">_include/file.ext</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">_layouts</code> are the templates that wrap posts. Layouts are chosen on a post-by-post basis in the <a href="https://jekyllrb.com/docs/frontmatter/">YAML Front Matter</a>. The liquid tag <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge"><span class="p">{</span></code> <code class="highlighter-rouge">content }}</code> is used to inject content into the web page.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">_posts</code> is your dynamic content lies. The naming must follow the format <code class="highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">_site</code> is where the generated site will be placed(by default) once Jekyll is done transforming it. It’s probably a good idea to add this to your <code class="highlighter-rouge">.gitignore</code> file.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">index.html</code> Provided that the file has a <a href="https://jekyllrb.com/docs/frontmatter/">YAML Front Matter section</a>, it will be transformed by Jekyll.</p>
+  </li>
+</ul>
+
+<!-- <h2 class="section-heading">The Final Frontier</h2> -->
+
+<!-- <h2 class="section-heading">Reaching for the Stars</h2> -->
+
+<!-- <a href="#">
+    <img src="/img/post-sample-image.jpg" alt="Post Sample Image">
 </a>
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span></p>
-
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span> -->
 
 
                 <hr>
