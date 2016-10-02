@@ -212,6 +212,8 @@ hr.small {
   }
 }
 .post-preview > a {
+  font-size: 16px;
+  /*font-style: italic;*/
   color: #404040;
 }
 .post-preview > a:hover,
@@ -219,19 +221,40 @@ hr.small {
   text-decoration: none;
   color: #0085a1;
 }
+
+/*
+  learn from hux
+  https://github.com/Huxpro/huxpro.github.io
+*/
+.post-content-preview {
+  font-size: 16px;
+  font-style: italic;
+  color: #404040;
+}
+.post-content-preview:hover {
+  color: #0085a1;
+}
+@media only screen and (min-width: 768px) {
+  .post-content-preview {
+    font-size: 16px;
+  }
+}
+
 .post-preview > a > .post-title {
-  font-size: 30px;
+  font-size: 24px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 .post-preview > a > .post-subtitle {
+  font-size: 20px;
   margin: 0;
   font-weight: 300;
   margin-bottom: 10px;
 }
 .post-preview > .post-meta {
+  font-family: 'Lora', 'Times New Roman', serif;
   color: #808080;
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
   margin-top: 0;
 }
@@ -246,7 +269,7 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 .section-heading {

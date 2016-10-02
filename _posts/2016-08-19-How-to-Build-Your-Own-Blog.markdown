@@ -3,7 +3,7 @@ layout:     post
 title:      "How to Build Your Own Blog"
 subtitle:   "best solution-GitHub Pages + Jekyll."
 date:       2016-08-19 12:00:00
-author:     "Yamin Li"
+author:     "Michael"
 header-img: "img/post-bg-01.jpg"
 ---
 
