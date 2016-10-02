@@ -5,6 +5,9 @@ subtitle:   "best solution-GitHub Pages + Jekyll."
 date:       2016-08-19 12:00:00
 author:     "Michael"
 header-img: "img/post-bg-01.jpg"
+tags:
+  - Tech
+  - Fun
 ---
 
 ## #Introduction

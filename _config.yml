@@ -28,3 +28,6 @@ gems: [jekyll-paginate, jekyll-feed]
 sidebar: true
 sidebar-about-description: "Northwestern University &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Alibaba Group Intern"
 sidebar-avatar: /img/avatar-yummy.jpg
+
+# feature tags
+featured-tags: true
