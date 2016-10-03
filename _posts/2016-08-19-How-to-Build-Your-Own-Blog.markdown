@@ -4,7 +4,7 @@ title:      "How to Build Your Own Blog"
 subtitle:   "best solution-GitHub Pages + Jekyll."
 date:       2016-08-19 12:00:00
 author:     "Michael"
-header-img: "img/post-bg-01.jpg"
+header-img: "img/in-post/2016-08-19/post-bg-01.jpg"
 tags:
   - Tech
   - Fun
