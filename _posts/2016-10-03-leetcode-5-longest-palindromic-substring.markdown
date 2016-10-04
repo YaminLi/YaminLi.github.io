@@ -4,43 +4,152 @@ title:      "[Leetcode] 5. Longest Palindromic Substring"
 subtitle:   "find the longest palindromic substring in S"
 date:       2016-10-03 21:30:00
 author:     "Michael"
-header-img: "img/in-post/2016-10-03/bg.jpg"
+header-img: "img/in-post/2016-10-03/bg1.jpg"
 tags:
   - Leetcode
   - C++
 ---
 
-<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+## 1. Problem Definition
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+[Leetcode 5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+> Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
 
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+Palindromic string means that it's the same as reversed one. For example, '12321', 'a', 'abba', and so on.
 
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+## 2. Solution  
 
-<h2 class="section-heading">The Final Frontier</h2>
+<p></p>
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+#### 2.1 Brute-Force ####
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+For each substring of S, check whether it's a valid palindrome, and find the longest one. Assuming that there's n characters in S, so S has n^2 substrings totally and the average length of those substrings is n/2. So the whole runtime for brute-force algorithm is O(n^3).
 
-<blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+````
+class Solution{
+public:
+    string brute_force(string s){
+        string res;
+        int maxLen=0;
+        for(int len = 1; len<=s.length(); len++){
+            for(int i=0; i+len<=s.length(); i++){
+                string subs = s.substr(i, len);
+                if (isPalindromic(subs) && len>maxLen) {
+                    maxLen = len;
+                    res = subs;
+                }
+            }
+        }
+        return res;
+    }
 
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+private:
+    bool isPalindromic(string s){
+        if (s.length() <= 1) {
+            return true;
+        }
+        else{
+            int i=0;
+            int j=s.length()-1;
+            while (j >= i ) {
+                if (s[i] != s[j]) {
+                    return false;
+                }
+                i++;
+                j--;
+            }
+            return true;
+        }
+    }
+};
+````
 
-<h2 class="section-heading">Reaching for the Stars</h2>
+#### 2.2 A little Better than Brute-Force ####
 
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+Because all the palindrome are symmetric, if the length of a palindrome one is even, then the symmetry axis locates between the middle two characters, otherwise it locates on the middle character. We can use the the symmetry axis to improve our algorithm's runtime. For each location of the symmetry axis, we look left and right at the same time till we meets the different left and right characters or reach the boundary. For a string with length n, there are n+n-1=2n-1 different locations of symmetry axis, and for each location, there are n/4 comparisons averagely. So the runtime is O(n^2).
 
-<a href="#">
-    <img src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="Post Sample Image">
-</a>
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+````
+class Solution{
+public:
+  string longestPalindrome(string s){
+      string res;
+      int maxLen = 0;
+      for(int i=0; i<s.size(); i++){
+          // palindrome's length is even
+          for (int len=1; i-len>=0 && i+len-1<s.size(); len++) {
+              string subs = s.substr(i-len, 2*len);
+              if(isPalindromic(subs) && 2*len>maxLen){
+                  maxLen = 2*len;
+                  res = subs;
+              }
+          }
+          // palindrome's length is odd
+          for (int len=0; i-len>=0 && i+len<s.size(); len++) {
+              string subs = s.substr(i-len, 2*len+1);
+              if (isPalindromic(subs) && (2*len+1)>maxLen) {
+                  maxLen = 2*len+1;
+                  res = subs;
+              }
+          }
+      }
+      return res;
+  }
 
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+private:
+    bool isPalindromic(string s){
+        if (s.length() <= 1) {
+            return true;
+        }
+        else{
+            int i=0;
+            int j=s.length()-1;
+            while (j >= i ) {
+                if (s[i] != s[j]) {
+                    return false;
+                }
+                i++;
+                j--;
+            }
+            return true;
+        }
+    }
+};
+````
 
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+#### 2.3 Manacher ####
 
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+To be Continued
+
+#### 2.4 Dynamic Programming ####
+
+For each start point of the Palindromic substring, to check whether it's valid. And use a n*n array to memorize the palindromic status of the substring we have checked.
+
+![img](/img/in-post/2016-10-03/bg.gif)
+<!--
+<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span> -->
+
+
+````
+class Solution{
+public:
+  string longestPalindrome2(string s){
+        int n=s.length();
+        bool isPalindrome[1000][1000]={false};
+        int start = 0;
+        int maxLen = 1;
+        for (int i=n-1; i>=0; i--) {
+            for (int j=i; j<n; j++) {
+                if (s[i]==s[j] && (i+1>j-1 || isPalindrome[i+1][j-1])) {
+                    isPalindrome[i][j] = true;
+                    if (j-i+1 > maxLen) {
+                        maxLen = j-i+1;
+                        start = i;
+                    }
+                }
+            }
+        }
+        return s.substr(start, maxLen);
+    }
+};
+````
