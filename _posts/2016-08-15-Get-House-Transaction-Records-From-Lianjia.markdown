@@ -10,37 +10,106 @@ tags:
   - Python
 ---
 
-<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+## #Tools Used  
+<p></p>
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+#### Python ####
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+Web service applications mostly are client-server programing. We are using the python library 'urllib' to send the request to the server and get the response.
 
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+A __URL__ or _Universal Resource Locator_ can be automatically translated to the __IP__ address by __DNS__ servers. So we can reach our destination simply using the __URL__ without knowing the specific ip address. Python's urllib library can use the url to locate the server and send a request to it. Simply like this.
 
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+````
+// python 3.5.2
+import urllib.request
 
-<h2 class="section-heading">The Final Frontier</h2>
+url = 'https://google.com'
+req = urllib.request.Request(url)
+content = urllib.request.urlopen(req).read()
+// print(content)
+````
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+----
+#### Regular Expression ####
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+To grab the useful information, we need some tool to just extract what we want from the complicated contents received from the server. We can use the __BeautifulSoup__ library or __Regular Expression__.
 
-<blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+> regular expressions are text matching patterns described with a formal syntax. The patterns are interpreted as a set of instructions, which are then executed with a string as input to produce a matching subset or modified version of the original.
 
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+Regular Expression Tutorial can be found in [Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html).
 
-<h2 class="section-heading">Reaching for the Stars</h2>
 
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+## #To Start
+<p></p>
 
-<a href="#">
-    <img src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="Post Sample Image">
-</a>
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+#### Log in Lianjia ####
 
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+````
+import re
+import requests
+import urllib.request
 
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+def login(username, password):
+    s = requests.session()
 
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+    home_url = 'http://bj.lianjia.com/'
+    auth_url = 'https://passport.lianjia.com/cas/login?service=http%3A%2F%2Fbj.lianjia.com%2F'
+
+    headers = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Encoding': 'gzip, deflate, sdch',
+        'Accept-Language': 'zh-CN,zh;q=0.8',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Host': 'passport.lianjia.com',
+        'Pragma': 'no-cache',
+        'Upgrade-Insecure-Requests': '1',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'
+    }
+
+    s.get(home_url)
+    res = s.get(auth_url, headers=headers)
+    # print(res.content)
+    # print(res.headers)
+
+    # r=re.compile(r'Set-Cookie: JSESSIONID=(.+?);')
+    set_cookie = res.headers['Set-Cookie']
+    idx = set_cookie.find(';')
+    jsesseionid = set_cookie[11:idx]
+    # print(jsesseionid)
+
+    pattern = re.compile(r'value=\"(LT-.+?)\"')
+    lt = pattern.findall(res.content.decode('utf-8'))[0]
+    # print(lt)
+
+    pattern = re.compile(r'name="execution" value="(.+?)"')
+    execution = pattern.findall(res.content.decode('utf-8'))[0]
+    # print(execution)
+
+    data = {
+        'username': 'username',
+        'password': 'password',
+        'execution': execution,
+        '_eventId': 'submit',
+        'lt': lt,
+        'verifyCode': '',
+        'redirect': '',
+    }
+
+    res=s.post(auth_url, data)
+    print(res)
+
+    return s
+````
+----
+
+#### Get the Transaction List ####
+
+----
+
+#### Data Frame ####
+![img](/img/in-post/2016-08-15/trans-list.png)
+<!-- <h2 class="section-heading">The Final Frontier</h2> -->
+
+<!-- <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span> -->
